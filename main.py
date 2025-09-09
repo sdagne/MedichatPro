@@ -211,10 +211,7 @@ st.markdown("""
 
 <div style="text-align: center; font-size: 0.9rem;">
 <p style="color: blue;">
-        RAG {Retrieval-augmented generation} project on Euron by 
-        
-        <img src="Medichatpro/images\222.png" width="20" height="20" style="vertical-align:middle; margin-right:5px;">
-        Shewan Dagne, guided by Instructor @Sudhanshu, for hands-on AI skill-building, strengthen practical skills.
+        RAG {Retrieval-augmented generation} project on Euron by Shewan Dagne, guided by Instructor @Sudhanshu, for hands-on AI skill-building, strengthen practical skills.
     </p>
 </div>
 """, unsafe_allow_html=True)
