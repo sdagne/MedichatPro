@@ -203,6 +203,14 @@ st.markdown("---")
 st.markdown("""
 <div style="text-align: center; color: #666; font-size: 0.9rem;">
     <p>🤖 Powered by Euri AI & LangChain | 📁  Medical Document Intelligence</p>
-    <p> style="color: blue;">RAG [Retrieval-augmented generation] project on Euron by Shewan Dagne, guided by Instructor @Sudhanshu, for hands-on AI skill-building., strengthen practical skills, and build a foundation for future AI applications </p/>
+    <p> RAG [Retrieval-augmented generation] project on Euron by Shewan Dagne, guided by Instructor @Sudhanshu, for hands-on AI skill-building., strengthen practical skills, and build a foundation for future AI applications </p/>
 </div>
 """, unsafe_allow_html=True)    
+
+
+st.markdown("""
+<div style="text-align: center; padding: 2rem 0;">
+    <h1 style="color: #ff4b4b; font-size: 3rem; margin-bottom: 0.5rem;">🦷 RAG [Retrieval-augmented generation] project on Euron by Shewan Dagne, guided by Instructor @Sudhanshu, for hands-on AI skill-building., strengthen practical skills, and build a foundation for future AI applications</h1>
+    <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">Your Intelligent Medical Document Assistant</p>
+</div>
+""", unsafe_allow_html=True)
