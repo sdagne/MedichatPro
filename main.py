@@ -141,67 +141,36 @@ with st.sidebar:
                 st.balloons()
 # Display email options start here
 # Sidebar for document upload and sending emails
-with st.sidebar:
-    st.markdown("### 📁 Document Upload")
-    st.markdown("Upload your medical documents to start chatting!")
-    
-    uploaded_files = pdf_uploader()
-    
-    if uploaded_files:
-        st.success(f"📄 {len(uploaded_files)} document(s) uploaded")
-        
-        if st.button("🚀 Process Documents", type="primary"):
-            with st.spinner("Processing your medical documents..."):
-                all_texts = [extract_text_from_pdf(file) for file in uploaded_files]
-                
-                # Split texts into chunks
-                text_splitter = RecursiveCharacterTextSplitter(
-                    chunk_size=1000,
-                    chunk_overlap=200,
-                    length_function=len,
-                )
-                
-                chunks = []
-                for text in all_texts:
-                    chunks.extend(text_splitter.split_text(text))
-                
-                vectorstore = create_faiss_index(chunks)
-                st.session_state.vectorstore = vectorstore
-                
-                chat_model = get_chat_model(EURI_API_KEY)
-                st.session_state.chat_model = chat_model
-                
-                st.success("✅ Documents processed successfully!")
-                st.balloons()
-    
-    st.markdown("---")
-    st.markdown("### ✉️ Send Email to Patient")
-    patient_email = st.text_input("Patient Email")
-    email_subject = st.text_input("Subject")
-    email_body = st.text_area("Message Body")
-    
-    if st.button("📨 Send Email"):
-        if patient_email and email_subject and email_body:
-            try:
-                # Example using Gmail SMTP (replace with your SMTP server)
-                sender_email = "your_email@example.com"
-                sender_password = "your_password"
+# Sidebar email section (add this after your document upload block)
+st.markdown("---")
+st.markdown("### ✉️ Send Email to Patient")
+patient_email = st.text_input("Patient Email")
+email_subject = st.text_input("Subject")
+email_body = st.text_area("Message Body")
 
-                msg = MIMEMultipart()
-                msg['From'] = sender_email
-                msg['To'] = patient_email
-                msg['Subject'] = email_subject
-                msg.attach(MIMEText(email_body, 'plain'))
+if st.button("📨 Send Email"):
+    if patient_email and email_subject and email_body:
+        try:
+            # Example using Gmail SMTP (replace with your SMTP server)
+            sender_email = "your_email@example.com"
+            sender_password = "your_password"
 
-                with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-                    server.login(sender_email, sender_password)
-                    server.sendmail(sender_email, patient_email, msg.as_string())
+            msg = MIMEMultipart()
+            msg['From'] = sender_email
+            msg['To'] = patient_email
+            msg['Subject'] = email_subject
+            msg.attach(MIMEText(email_body, 'plain'))
 
-                st.success(f"✅ Email sent to {patient_email}")
-            except Exception as e:
-                st.error(f"❌ Failed to send email: {e}")
-        else:
-            st.warning("⚠️ Please fill all fields before sending")
+            with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+                server.login(sender_email, sender_password)
+                server.sendmail(sender_email, patient_email, msg.as_string())
+
+            st.success(f"✅ Email sent to {patient_email}")
+        except Exception as e:
+            st.error(f"❌ Failed to send email: {e}")
+    else:
+        st.warning("⚠️ Please fill all fields before sending")
+
 
 # Prompt the user for their email address end here
 
