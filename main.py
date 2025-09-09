@@ -70,6 +70,14 @@ st.markdown("""
         border-radius: 0.25rem;
         margin: 0.5rem 0;
     }
+    .main .block-container {
+    border: 3px solid violet;
+    border-radius: 12px;
+    padding: 25px 25px 50px 25px; /* extra bottom padding for chat input */
+    margin: 15px;
+    background-color: white;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -83,7 +91,7 @@ if "chat_model" not in st.session_state:
     
 st.markdown("""
 <div style="text-align: center; padding: 2rem 0;">
-    <h1 style="color: #ff4b4b; font-size: 3rem; margin-bottom: 0.5rem;">🏥 MediChat Pro</h1>
+    <h1 style="color: #ff4b4b; font-size: 3rem; margin-bottom: 0.5rem;">🏥 Your Dental MediChat Pro</h1>
     <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">Your Intelligent Medical Document Assistant</p>
 </div>
 """, unsafe_allow_html=True)
