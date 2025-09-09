@@ -195,6 +195,7 @@ if prompt := st.chat_input("Ask about your medical documents..."):
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; color: #666; font-size: 0.9rem;">
-    <p>🤖 Powered by Shewan Euri AI & LangChain | 🏥 Medical Document Intelligence</p>
+    <p>🤖 Powered by Euri AI & LangChain | 🏥 Medical Document Intelligence</p>
+    <p> Developed by Shewan Dagne for the purpose of RAG learning. This project serves as a hands-on practice to explore retrieval-augmented generation, strengthen practical skills, and build a foundation for future AI applications </p/>
 </div>
 """, unsafe_allow_html=True)    
