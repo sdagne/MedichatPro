@@ -208,6 +208,7 @@ st.markdown("""
 """, unsafe_allow_html=True)    
 
 st.markdown("""
+st.image("images\11.png", width=32) 
 <div style="text-align: center; font-size: 0.9rem;">
     <p style="color: blue;">
     RAG {Retrieval-augmented generation} project on Euron by Shewan Dagne, guided by Instructor @Sudhanshu, for hands-on AI skill-building, strengthen practical skills.
