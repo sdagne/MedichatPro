@@ -152,8 +152,8 @@ if st.button("📨 Send Email"):
     if patient_email and email_subject and email_body:
         try:
             # Example using Gmail SMTP (replace with your SMTP server)
-            sender_email = "your_email@example.com"
-            sender_password = "your_password"
+            sender_email = "shewan.dagne1@gmail.com"
+            sender_password = "$Tinplh12"
 
             msg = MIMEMultipart()
             msg['From'] = sender_email
