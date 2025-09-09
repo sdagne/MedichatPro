@@ -139,40 +139,6 @@ with st.sidebar:
                 
                 st.success("✅ Documents processed successfully!")
                 st.balloons()
-# Display email options start here
-# Sidebar for document upload and sending emails
-# Sidebar email section (add this after your document upload block)
-st.markdown("---")
-st.markdown("### ✉️ Send Email to Patient")
-patient_email = st.text_input("Patient Email")
-email_subject = st.text_input("Subject")
-email_body = st.text_area("Message Body")
-
-if st.button("📨 Send Email"):
-    if patient_email and email_subject and email_body:
-        try:
-            # Example using Gmail SMTP (replace with your SMTP server)
-            sender_email = "shewan.dagne1@gmail.com"
-            sender_password = "$Tinplh12"
-
-            msg = MIMEMultipart()
-            msg['From'] = sender_email
-            msg['To'] = patient_email
-            msg['Subject'] = email_subject
-            msg.attach(MIMEText(email_body, 'plain'))
-
-            with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-                server.login(sender_email, sender_password)
-                server.sendmail(sender_email, patient_email, msg.as_string())
-
-            st.success(f"✅ Email sent to {patient_email}")
-        except Exception as e:
-            st.error(f"❌ Failed to send email: {e}")
-    else:
-        st.warning("⚠️ Please fill all fields before sending")
-
-
-# Prompt the user for their email address end here
 
 # Main chat interface
 st.markdown("### 💬 Explore Your Medical Records")
