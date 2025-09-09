@@ -137,7 +137,7 @@ with st.sidebar:
                 st.balloons()
 
 # Main chat interface
-st.markdown("### 💬 Chat with Your Medical Documents")
+st.markdown("### 💬 Ask Questions About Your Medical Documents")
 
 # Display chat messages
 for message in st.session_state.messages:
