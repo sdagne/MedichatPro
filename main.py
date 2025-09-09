@@ -10,11 +10,10 @@ import time
 
 st.set_page_config(
     page_title="MediChat Pro - Medical Document Assistant",
-    page_icon="🏥",
+    page_icon="🦷",
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
 st.markdown("""
 <style>
     .chat-message {
@@ -91,7 +90,7 @@ if "chat_model" not in st.session_state:
     
 st.markdown("""
 <div style="text-align: center; padding: 2rem 0;">
-    <h1 style="color: #ff4b4b; font-size: 3rem; margin-bottom: 0.5rem;">🏥 Your Dental MediChat Pro</h1>
+    <h1 style="color: #ff4b4b; font-size: 3rem; margin-bottom: 0.5rem;">🦷 Your Dental MediChat Pro</h1>
     <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">Your Intelligent Medical Document Assistant</p>
 </div>
 """, unsafe_allow_html=True)
@@ -203,7 +202,7 @@ if prompt := st.chat_input("Ask about your medical documents..."):
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; color: #666; font-size: 0.9rem;">
-    <p>🤖 Powered by Euri AI & LangChain | 🏥 Medical Document Intelligence</p>
+    <p>🤖 Powered by Euri AI & LangChain | 📁  Medical Document Intelligence</p>
     <p> Developed by Shewan Dagne for the purpose of RAG learning. This project serves as a hands-on practice to explore retrieval-augmented generation, strengthen practical skills, and build a foundation for future AI applications </p/>
 </div>
 """, unsafe_allow_html=True)    
